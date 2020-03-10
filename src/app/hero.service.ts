@@ -3,20 +3,23 @@ import { Observable, of } from 'rxjs';
 
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
+import { MessageService } from './message.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   //old, synchronous version left here for comparison
   getHeroes(): Hero[] {
+    this.messageService.add('HeroService: fetched heroes and returning as array');
     return HEROES;
   }
 
   getHeroesAsync(): Observable<Hero[]> {
+    this.messageService.add('HeroService: fetched heroes and returning as Observable');
     return of(HEROES);
   }
 
