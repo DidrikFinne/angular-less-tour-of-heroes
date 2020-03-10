@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+@headingsFontFamily:Arial, Helvetica, sans-serif;
+@defaultSerifFontFamily: Cambria, Georgia;
+@defaultNonSerifFontFamily: Arial, Helvetica, sans-serif;
+
+h1 {
+  color: #369;
+  font-family: @headingsFontFamily;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: headingsFontFamily;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[type="text"], button {
+  color: #333;
+  font-family: @defaultSerifFontFamily;
+}
+/* everywhere else */
+* {
+  font-family: @defaultNonSerifFontFamily;
+}
