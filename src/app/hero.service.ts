@@ -19,8 +19,9 @@ export class HeroService {
   }
 
   getHeroesAsync(): Observable<Hero[]> {
-    this.messageService.add('HeroService: fetched heroes and returning as Observable');
-    return of(HEROES);
+    const heroes = this.getHeroes();
+    this.messageService.add('HeroService: returning heroes array as Observable');
+    return of(heroes);
   }
 
 }
