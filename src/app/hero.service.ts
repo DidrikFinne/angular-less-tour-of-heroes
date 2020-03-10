@@ -14,6 +14,7 @@ export class HeroService {
 
   //old, synchronous version left here for comparison
   getHeroes(): Hero[] {
+
     this.messageService.add('HeroService: fetched heroes and returning as array');
     return HEROES;
   }
@@ -22,6 +23,12 @@ export class HeroService {
     const heroes = this.getHeroes();
     this.messageService.add('HeroService: returning heroes array as Observable');
     return of(heroes);
+  }
+
+  getHeroAsync(id: number): Observable<Hero> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(HEROES.find(hero => hero.id === id));
   }
 
 }

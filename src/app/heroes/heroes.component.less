@@ -7,23 +7,25 @@
   li {
     cursor: pointer;
     position: relative;
-    left: 0;
     background-color: #EEE;
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
-    &.selected{
-      background-color: #CFD8DC;
-      color: white;
-      &:hover {
-        color: white;
-      }
-    }
-    &:hover{
+    &:hover {
       color: #607D8B;
-      background-color: #BBD8DC;
+      background-color: #DDD;
       left: .1em;
+    }
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 250px;
+    &:hover {
+      color:#607D8B;
     }
   }
 
@@ -38,8 +40,14 @@
     left: -1px;
     top: -4px;
     height: 1.8em;
+    min-width: 16px;
+    text-align: right;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
 
   }
 }
+
+
+
+
