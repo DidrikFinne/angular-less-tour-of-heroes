@@ -18,11 +18,6 @@ export class HeroesComponent implements OnInit {
     this.getHeroesAsync();
   }
 
-  //synchronous version left here for comparison
-  getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
-  }
-
   getHeroesAsync(): void {
     this.heroService.getHeroesAsync()
         .subscribe(heroes => this.heroes = heroes);
