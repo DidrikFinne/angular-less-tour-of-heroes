@@ -8,9 +8,21 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('site root should display "Tour of Heroes"', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('less-tour-of-heroes app is running!');
+    expect(page.getTitleText()).toEqual('Tour of Heroes');
+  });
+
+
+  it('dashboard url should put "Dashboard" into document title', () => {
+    page.navigateTo('/dashboard')
+      .then(_=>{
+        expect(page.getDocumentTitle()).toContain('Dashboard');
+      })
+      .then(_=>{
+        expect(page.getDocumentTitle()).toContain('Tour of Heroes');
+      });
+
   });
 
   afterEach(async () => {
